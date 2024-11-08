@@ -1,85 +1,124 @@
 :root {
-    --primary-color: #2c2d43;
-    --secondary-color: #ffffff;
-    --accent-color: #e51e3b;
-    --text-color: #b5bcc2;
+    --primary-color: #2c2d43; /* Dark Blue */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #e51e3b; /* Red */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mach die Navbar fixiert */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Platz für die fixierte Navbar schaffen */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 80px 0 0 0;
     color: var(--primary-color);
 }
 
-/* Layout */
-header, nav, section, footer {
-    padding: 20px;
+/* Abstand für Sections beim Scrollen */
+section {
+    padding: 60px 30px;
+    text-align: center;
+    scroll-margin-top: 80px;
 }
 
-nav, .about-content, .spotlight-items, .team-container, .social-icons, .promotion-container {
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #e51e3b;
+}
+
+.badges {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+	margin-bottom: -20px;
 }
 
-/* Header and Navigation */
-header {
-    background-color: var(--primary-color);
+.badges img {
+    height: 30px;
+    object-fit: contain; /* Passt das Bild an, ohne es zu verzerren */
 }
 
-nav {
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-transform: uppercase;
-}
-
-.brand {
+nav .brand a {
+    display: block;
+    text-decoration: none;
     font-size: 30px;
     font-weight: 700;
     color: var(--secondary-color);
+	margin-right: 20px;
+	text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s;
 }
 
+nav .brand a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
 nav ul {
+    list-style: none;
     display: flex;
     gap: 20px;
 }
 
 nav ul li a {
+    display: block;
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: 550;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover, .logo a:hover {
-    color: var(--accent-color);
-}
-
-/* Typography */
-h2 {
-    margin: -20px 0 20px;
-}
-
-h3 {
-    font-size: 1.5em;
-    color: var(--accent-color);
     text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s;
 }
 
-/* Sections */
-section {
-    padding: 40px;
-    text-align: center;
+nav ul li a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+#intro {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 35px;
 }
 
 #about {
     background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .about-content {
-    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .about-text {
@@ -89,17 +128,30 @@ section {
 
 .about-image img {
     width: 300px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.badges {
-    margin: 20px 0 -20px;
+#explore {
+    background-color: var(--primary-color);
+    padding: 15px;
 }
 
-.badges img {
-    height: 30px;
-    object-fit: contain;
+.explore-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.explore-icons a {
+    color: var(--secondary-color);
+    font-size: 40px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.explore-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 #spotlight {
@@ -107,97 +159,111 @@ section {
     color: var(--secondary-color);
 }
 
+.spotlight-items {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: -15px;
+}
+
 .spotlight-item {
     background-color: var(--primary-color);
-    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 200px;
-    height: 200px;
-    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .spotlight-item img {
     width: 85%;
-    border-radius: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: inherit;
 }
 
-#team {
-    margin-bottom: -20px;
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: -30px;
 }
 
 .side-member {
-    transform: translateY(-40px);
+    transform: translateY(-50px);
 }
 
 .team-photo {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
+.team-info h3 {
+    text-transform: uppercase;
+	font-size: 17px;
 }
 
 .team-info p {
-    color: var(--text-color);
+    color: #b5bcc2;
 }
 
-#explore {
+#placeholder {
     background-color: var(--primary-color);
-    padding: 20px 0;
+    padding: 30px;
 }
 
-.social-icons a {
-    font-size: 40px;
-    color: var(--secondary-color);
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: var(--accent-color);
-}
-
-/* Promotions */
 #promotions {
-    margin-bottom: -20px;
     background-color: var(--accent-color);
     color: var(--secondary-color);
 }
 
+.promotion-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 .promotion-box {
-    background: linear-gradient(135deg, #ff007f, #ff7f00, #4caf50, #00ff7f, #007fff, #0000ff, #7f00ff);
+    background: linear-gradient(135deg, 
+        #ff007f, /* Pink */
+        #ff7f00, /* Orange */
+        #4caf50, /* Dunkleres Grün */
+        #00ff7f, /* Mint */
+        #007fff, /* Cyan */
+        #0000ff, /* Blau */
+        #7f00ff /* Lila */
+    );
     color: var(--primary-color);
     border-radius: 15px;
     padding: 30px;
     margin: 15px;
+    position: relative;
     width: 300px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    position: relative;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .discount {
     position: absolute;
     top: 6px;
     right: -20px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: white;
     padding: 10px;
     transform: rotate(45deg);
     font-weight: bold;
     border-radius: 5px;
+	background-color: #2c2d43;
 }
 
 .cta-button {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: #e51e3b;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    display: inline-block;
-    margin-top: 20px;
 }
 
 .cta-button:hover {
@@ -206,17 +272,12 @@ section {
 
 .code {
     font-weight: bold;
-    color: var(--accent-color);
+    color: #e51e3b;
 }
 
-/* Footer */
-footer {
+#footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 10px 0;
-}
-
-/* Utility Classes */
-.hidden-section {
-    display: none;
+    text-align: center;
+    padding: 1px;
 }
