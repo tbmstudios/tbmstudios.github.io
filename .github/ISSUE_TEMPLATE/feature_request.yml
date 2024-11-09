@@ -1,0 +1,52 @@
+name: Feature Request
+description: Suggest an idea or enhancement for the website
+title: "[FEATURE]: "
+labels: ["✨ | Enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for suggesting a new feature!
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before proceeding
+      options:
+        - label: I have checked that this feature hasn't been suggested before
+          required: true
+        - label: I have reviewed existing features to confirm that this request is not a duplicate
+          required: true
+    validations:
+      required: true
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Provide a clear and concise description of the feature you'd like to see on the website.
+      placeholder: I would like to see a dark mode toggle button for better readability at night.
+    validations:
+      required: true
+  - type: textarea
+    id: problem-solution
+    attributes:
+      label: Problem and Solution
+      description: Describe the problem this feature would solve or how it would improve the user experience.
+      placeholder: This feature would reduce eye strain for users who browse the site at night.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you've considered.
+      placeholder: Instead of a toggle, we could use the system's dark mode setting by default.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, mock-ups, or screenshots about the feature request here.
+      placeholder: Potential challenges might include compatibility with existing UI components.
+    validations:
+      required: false

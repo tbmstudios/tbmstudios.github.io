@@ -1,0 +1,69 @@
+name: Bug Report
+description: Report a bug or issue with the website
+title: "[BUG]: "
+labels: ["🐛 | Bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for taking the time to report this bug!
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before proceeding
+      options:
+        - label: I am using the latest version of my browser
+          required: true
+        - label: I have cleared my browser cache and tried to reproduce this issue
+          required: true
+        - label: I have checked that this bug hasn't been reported before
+          required: true
+    validations:
+      required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of the bug and what actually happens on the website.
+      placeholder: When clicking on the 'Submit' button, nothing happens.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior on the website.
+      placeholder: |
+        1. Go to the homepage
+        2. Click on the 'Sign Up' button
+        3. Fill out the form and click 'Submit'
+        4. The page shows an error message
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: The form should submit successfully, and I should be redirected to the dashboard.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Console Logs
+      description: Please copy and paste any relevant browser console logs here.
+      placeholder: |
+        Uncaught TypeError: Cannot read property 'submit' of undefined
+        at formSubmit (main.js:42)
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here, such as screenshots or device information.
+      placeholder: The issue started after updating to version 2.1.0. Occurs on both Chrome and Firefox.
+    validations:
+      required: false
