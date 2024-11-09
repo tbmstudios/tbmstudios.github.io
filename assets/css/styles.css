@@ -109,6 +109,19 @@ nav ul li a:hover {
     padding: 35px;
 }
 
+/* Für das Bild im Intro */
+.intro-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Für das Trennzeichen im Intro */
+.intro-divider {
+    border: 1px solid #2c2d43;
+    width: 40%;
+    margin: 0 auto;
+}
+
 #about {
     background-color: var(--secondary-color);
     color: var(--primary-color);
