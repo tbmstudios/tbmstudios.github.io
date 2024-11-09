@@ -260,4 +260,5 @@ nav ul li a:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1px;
+    text-align: center;
 }
