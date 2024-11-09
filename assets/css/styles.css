@@ -142,7 +142,9 @@ nav ul li a:hover {
 
 #explore {
     background-color: var(--primary-color);
-    padding: 15px;
+    padding: 40px;
+    color: var(--secondary-color);
+    margin-bottom: -20px;
 }
 
 .explore-icons {
